@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let c1 = 0;
+        let c2 = 0;
+        let c3 = 0;
+        let c4 = 0;
+        let nulo = 0;
+
+        while(true){
+            opcao = parseInt(prompt("Digite (1) para candidato-1 / Digite (2) para cadidato-2 Digite (3) para candidato-3 / Digite (4) para candidato-4 / Digite (5) para votar nulo / Digite(6) para encerrar votação/" ))
+
+            switch(opcao){
+
+                case 1:
+                    c1++ ;
+                    break;
+
+                case 2:
+                    c2++;
+                    break;
+                case 3:
+                    c3++; 
+                    break;
+                case 4:
+                    c4++;
+                    break;
+                case 5:
+                    nulo++;
+                    break;
+                case 6:
+                    break;
+                default:
+                    console.log("Opção inválida. Por favor, escolha uma opção válida.");
+            }
+
+            if (opcao == 6) {
+                break;
+            }
+        }
+
+        let mensagemResultado = "Resultado da Eleição:\n";
+            mensagemResultado += "Candidato 1: " + c1 + " votos\n";
+            mensagemResultado += "Candidato 2: " + c2 + " votos\n";
+            mensagemResultado += "Candidato 3: " + c3 + " votos\n";
+            mensagemResultado += "Candidato 4: " + c4 + " votos\n";
+            mensagemResultado += "Nulo/Branco: " + nulo + " votos\n";
+            alert(mensagemResultado);
+
+         
+    </script>
+</body>
+</html>
