@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <h1>Quiz</h1>
+  <div id="pergunta"></div>
+  <input type="text" id="resposta" placeholder="Digite sua resposta">
+  <button onclick="verificarResposta()">Verificar resposta</button>
+  <div id="resultado"></div>
+
+  <script>
+    var perguntaAtual = 0;
+    var pontuacao = 0;
+
+    function exibirPergunta() {
+      var perguntaElemento = document.getElementById("pergunta");
+      var respostaInput = document.getElementById("resposta");
+
+      var perguntas = [
+        {
+          pergunta: "Qual é a capital do Brasil?",
+          resposta: "Brasília"
+        },
+        {
+          pergunta: "Qual o maior animal do mundo?",
+          resposta: "Baleia Azul"
+        },
+        {
+          pergunta: "Qual maior região do brasil?",
+          resposta: "Norte"
+        }
+      ];
+
+      perguntaElemento.textContent = perguntas[perguntaAtual].pergunta;
+      respostaInput.value = "";
+    }
+
+    function verificarResposta() {
+      var respostaInput = document.getElementById("resposta");
+      var resposta = respostaInput.value.trim().toLowerCase();
+
+      var perguntas = [
+        {
+          pergunta: "Qual é a capital do Brasil?",
+          resposta: "brasília"
+        },
+        {
+          pergunta: "Qual o maior animal do mundo?",
+          resposta: "baleia azul"
+        },
+        {
+          pergunta: "Qual maior região do brasil?",
+          resposta: "norte"
+        }
+      ];
+
+      if (resposta === perguntas[perguntaAtual].resposta) {
+        pontuacao++;
+      }
+
+      perguntaAtual++;
+      if (perguntaAtual < perguntas.length) {
+        exibirPergunta();
+      } else {
+        var resultadoElemento = document.getElementById("resultado");
+        resultadoElemento.textContent = "Você acertou " + pontuacao + " de " + perguntas.length + " perguntas.";
+      }
+    }
+
+    exibirPergunta();
+  </script>
+</body>
+</html>
