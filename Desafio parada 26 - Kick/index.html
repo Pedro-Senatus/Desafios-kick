@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="formulario" onsubmit="validarFormulario()">
+    <h1>Formulário de Exemplo</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required placeholder="Digite o seu nome:">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required placeholder="Digite seu email:">
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone" required placeholder="Digite seu número:">
+
+    <label for="genero">Gênero:</label>
+    <label for="masculino">Masculino</label>
+    <input type="radio" id="masculino" name="genero" value="masculino" required>
+    <label for="feminino">Feminino</label>
+    <input type="radio" id="feminino" name="genero" value="feminino" required>
+    
+
+    <label for="regiao">Região:</label>
+    <select id="regiao" name="regiao" required>
+      <option value="">Selecione</option>
+      <option value="norte">Norte</option>
+      <option value="nordeste">Nordeste</option>
+      <option value="sul">Sul</option>
+      <option value="suldeste">Suldeste</option>
+    </select>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    function validarFormulario() {
+      var nome = document.getElementById('nome').value;
+      var email = document.getElementById('email').value;
+      var telefone = document.getElementById('telefone').value;
+      var genero = document.querySelector('input[name="genero"]:checked');
+      var regiao = document.getElementById('regiao').value;
+
+      var divErro = document.getElementById('mensagem-erro');
+      divErro.innerHTML = '';
+
+      if (nome === '' || email === '' || telefone === '' || genero === null || regiao === '') {
+        divErro.innerHTML = 'Por favor, preencha todos os campos.';
+        return false;
+      }
+
+      alert('Formulário enviado com sucesso!');
+      return true;
+    }
+  </script>
+</body>
+</html>
