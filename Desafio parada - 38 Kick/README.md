@@ -1,9 +1,14 @@
 #Site Kick
 https://pedro-santos.soukick.com.br/
+
 #Backup
+
 https://drive.google.com/drive/folders/1NSBOlvggetaDUDn6cjfbWTsR2yPPXL_P?usp=drive_link
+
 #Imagem do site PDF
+
 [Site Portfólio.pdf](https://github.com/Pedro-Senatus/Desafios-kick/files/12176978/Site.Portfolio.pdf)
+
 
 ![image](https://github.com/Pedro-Senatus/Desafios-kick/assets/127903586/a3724030-6784-4b65-b923-d35d79627291)
 
